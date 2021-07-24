@@ -4,21 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Qahiri&display=swap" rel="stylesheet">
     <script src="script/game.js" defer></script>
   </head>
   <body>
+  <h1> Rock Paper Scissors</h1>
+  <h2> BEST OF FIVE </h2>
     <div id="playerbuttons">
-      <button type="button" id="rock">Rock</button>
-      <button type="button" id="paper">Paper</button>
-      <button type="button" id="scissors">Scissors</button>
+      <input type="image" src="pictures/rock.png" id="rock">
+      <input type="image" src="pictures/paper.png" id="paper">
+      <input type="image" src="pictures/scissors.png" id="scissors">
     </div>
-    <div id="results"></div>
-    <div id="player"></div>
-    <div id="computer"></div>
-    <div id="tie"></div>
-    <div id="message"></div>
-    <div id="reset">
+    <div id="results" class="results"></div>
+    <div id="player" class="results score"></div>
+    <div id="computer" class = "results score"></div>
+    <div id="tie" class="results score"></div>
+    <div id="message" class="results"></div>
+    <div id="reset" class="results">
       <button type="button" id="reset-button">Reset</button>
     </div>
   </script></body>

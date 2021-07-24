@@ -1,0 +1,50 @@
+body {
+  background-image: url(../pictures/paper-textured.jpg);
+  font-family: Qahiri;
+  text-align: center;
+  white-space: nowrap;
+}
+
+h1 {
+  font-size: 10rem;
+}
+h2 {
+  font-size: 5rem;
+}
+
+#playerbuttons {
+  text-align: center;
+}
+
+#rock {
+  width: 10rem;
+  height: auto;
+  transform: translateY(1rem);
+}
+
+#paper {
+  width: 8rem;
+  height: auto;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+#scissors {
+  width: 7rem;
+  height: auto;
+}
+
+#reset-button {
+  background: transparent;
+  margin-top: 2rem;
+}
+
+.results {
+  font-size: 3rem;
+}
+
+.score {
+  display: inline;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
