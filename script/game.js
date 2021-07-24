@@ -1,35 +1,29 @@
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll("#playerbuttons");
 const results = document.querySelector("#results");
 const player = document.querySelector("#player");
 const computer = document.querySelector("#computer");
 const message = document.querySelector("#message");
 const tie = document.querySelector("#tie");
-
+const reset = document.querySelector("#reset-button");
 let playerWins = 0;
 let computerWins = 0;
 let draws = 0;
 
 buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    if (playerWins >= 5 || computerWins >= 5) return;
-    game(button.id);
-  });
+  button.addEventListener("click", game);
 });
 
+reset.addEventListener("click", (e) => location.reload());
+
 function computerPlay() {
-  let num = Math.floor(Math.random() * 3);
-  if (num === 0) {
-    return "Rock";
-  } else if (num == 1) {
-    return "Paper";
-  } else {
-    return "Scissors";
-  }
+  let choices = ["Rock", "Paper", "Scissors"];
+  return choices[Math.floor(Math.random() * choices.length)];
 }
 
 function playRound(playerSelection, computerSelection) {
   playerSelection =
     playerSelection[0].toUpperCase() + playerSelection.substring(1);
+
   if (playerSelection === computerSelection) {
     results.textContent =
       playerSelection + " vs " + computerSelection + "! There was a tie";
@@ -61,9 +55,10 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game(playerSelection) {
+function game(e) {
+  if (playerWins >= 5 || computerWins >= 5) return;
   computerSelection = computerPlay();
-  playRound(playerSelection, computerSelection);
+  playRound(e.target.id, computerSelection);
   player.textContent = "Wins: " + playerWins;
   computer.textContent = "Loses: " + computerWins;
   tie.textContent = "Ties: " + draws;
